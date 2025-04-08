@@ -1,28 +1,38 @@
-Description:
-This script sorts files in a specified folder by their extensions, organizing them into corresponding categories (Images, Documents, Videos, etc.).
-How to Use:
+Описание
 
-    Set the folder path in the folder_path variable.
+Скрипт на Python, который автоматически сортирует файлы в папке Загрузки (или любой другой), распределяя их по категориям: Images, Documents, Videos и т. д.
+⚙️ Возможности
 
-    Run the script.
+    Сортирует файлы по расширению (например, .jpg → Images, .pdf → Documents).
 
-    Files will be automatically moved into subfolders based on their type.
+    Создает нужные папки, если их нет.
 
-Supported Categories:
+    Неизвестные расширения попадают в Other.
 
-    Images: JPG, JPEG, PNG, GIF, BMP, TIFF
+    Простой выбор папки через графическое окно (не нужно вручную прописывать путь).
 
-    Documents: PDF, DOC, DOCX, TXT, XLS, XLSX, PPT, PPTX
+📥 Установка
 
-    Videos: MP4, AVI, MOV, MKV
+    Должен быть установлен Python 3.
+    Установите необходимые библиотеки (если нужно):
+    bash
+    pip install tkinter shutil os
+    (Обычно они уже есть в стандартной библиотеке Python.)
 
-    Music: MP3, WAV, AAC, FLAC
+🚀 Использование
 
-    Archives: ZIP, RAR, 7Z, TAR, GZ
+    Запустите скрипт:
+    bash
+    python download_organizer.py
+    Откроется окно – выберите папку для сортировки (например, Загрузки).
+    Скрипт автоматически переместит файлы в соответствующие папки.
 
-    Programs: EXE, MSI, BAT, SH
+🔄 Настройка
 
-    Other: All other extensions
-Run: 
-bash
-python file_sorter.py
+Вы можете изменить категории, отредактировав словарь categories в коде:
+python
+categories = {
+    'Images': ['jpg', 'png', ...],
+    'Documents': ['pdf', 'docx', ...],
+    # Добавьте или удалите расширения!
+}
