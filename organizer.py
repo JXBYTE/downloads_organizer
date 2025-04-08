@@ -1,5 +1,7 @@
 import os
 import shutil
+import tkinter as tk
+from tkinter import filedialog
 
 def sort_files_by_extension(directory):
     if not os.path.exists(directory):
@@ -50,7 +52,16 @@ def sort_files_by_extension(directory):
     
     print("Сортировка завершена!")
 
-# Укажите путь к папке, которую хотите отсортировать
-folder_path = r"сортировочный путь указать тут"  # Папка, где будут сортироваться файлы
-print(f"Выбрана папка для сортировки: {folder_path}")
-sort_files_by_extension(folder_path)
+def select_folder():
+    root = tk.Tk()
+    root.withdraw()  # Скрываем основное окно
+    
+    folder_path = filedialog.askdirectory(title="Выберите папку для сортировки")
+    if folder_path:
+        print(f"Выбрана папка для сортировки: {folder_path}")
+        sort_files_by_extension(folder_path)
+    else:
+        print("Папка не выбрана.")
+
+if __name__ == "__main__":
+    select_folder()
